@@ -3,19 +3,17 @@
 import { useState } from "react";
 import { Menu, X } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
-import logo from "@/assets/plane.svg"
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
 
   return (
-    <nav className="w-full shadow-md fixed top-0 z-50 h-[64px]">
+    <nav className="w-full fixed top-0 z-50 h-[64px]">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0 text-xl font-bold text-blue-600">
-            <Image src={logo} width={100} height={100} alt="Website logo" />
+          <div className="flex-shrink-0 text-xl font-bold text-white">
+            <Link href={"/"}>TravelGuru</Link>
           </div>
 
           {/* Middle Links */}
@@ -63,7 +61,7 @@ const Navbar = () => {
           {/* Mobile Menu Button */}
           <div className="md:hidden">
             <button onClick={() => setIsMobileMenuOpen(true)}>
-              <Menu className="w-6 h-6" />
+              <Menu className="w-6 h-6 text-white" />
             </button>
           </div>
         </div>
@@ -71,12 +69,12 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed top-0 right-0 h-full w-64 bg-white shadow-lg transform transition-transform duration-500 ease-in-out ${
+        className={`md:hidden fixed top-0 right-0 h-full w-64 bg-gray-800 text-white transform transition-transform duration-500 ease-in-out ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
         <div className="p-4 flex justify-between items-center border-b">
-          <span className="text-xl font-semibold">Menu</span>
+          {" "}
           <button onClick={() => setIsMobileMenuOpen(false)}>
             <X className="w-6 h-6" />
           </button>

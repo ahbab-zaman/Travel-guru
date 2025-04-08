@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { AlignRight, X } from "lucide-react";
 import Link from "next/link";
 import Image from "next/image";
@@ -8,9 +8,24 @@ import logo from "../../public/favicon.png";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [scrolled, setScrolled] = useState(false);
+  useEffect(() => {
+    const handleScroll = () => {
+      const offset = window.scrollY;
+      setScrolled(offset > 10);
+    };
+    window.addEventListener("scroll", handleScroll);
+    return () => {
+      window.removeEventListener("scroll", handleScroll);
+    };
+  }, []);
 
   return (
-    <nav className="w-full fixed top-0 z-50 h-[64px]">
+    <nav
+      className={`${
+        scrolled ? "bg-[#222] transition-all duration-500" : "bg-transparent"
+      } w-full fixed top-0 z-50`}
+    >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}

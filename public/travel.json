@@ -1,0 +1,101 @@
+[
+  {
+    "id": "1",
+    "image": "https://wordpressboss.com/opb/vtravel-demo/assets/images/place/place1.jpg",
+    "title": "Romantic Getaway in Paris",
+    "location": "Paris, France",
+    "reviews": 1287,
+    "rating": 4.8,
+    "price": 299
+  },
+  {
+    "id": "2",
+    "image": "https://wordpressboss.com/opb/vtravel-demo/assets/images/place/place2.jpg",
+    "title": "Hill-Top Airplane view",
+    "location": "Bali, Indonesia",
+    "reviews": 942,
+    "rating": 4.7,
+    "price": 199
+  },
+  {
+    "id": "3",
+    "image": "https://wordpressboss.com/opb/vtravel-demo/assets/images/place/place3.jpg",
+    "title": "New York City Lights Tour",
+    "location": "New York, USA",
+    "reviews": 2103,
+    "rating": 4.6,
+    "price": 349
+  },
+  {
+    "id": "4",
+    "image": "https://wordpressboss.com/opb/vtravel-demo/assets/images/place/place4.jpg",
+    "title": "Cultural Exploration in Tokyo",
+    "location": "Tokyo, Japan",
+    "reviews": 789,
+    "rating": 4.5,
+    "price": 259
+  },
+  {
+    "id": "5",
+    "image": "https://trisog-html.netlify.app/assets/images/featured-tours-section/tour-1.png",
+    "title": "Sunset Views in Santorini",
+    "location": "Santorini, Greece",
+    "reviews": 1124,
+    "rating": 4.9,
+    "price": 319
+  },
+  {
+    "id": "6",
+    "image": "https://trisog-html.netlify.app/assets/images/featured-tours-section/tour-2.png",
+    "title": "Historical Wonders of Rome",
+    "location": "Rome, Italy",
+    "reviews": 980,
+    "rating": 4.6,
+    "price": 289
+  },
+  {
+    "id": "7",
+    "image": "https://trisog-html.netlify.app/assets/images/featured-tours-section/tour-3.png",
+    "title": "Adventure in Cape Town",
+    "location": "Cape Town, South Africa",
+    "reviews": 654,
+    "rating": 4.7,
+    "price": 239
+  },
+  {
+    "id": "8",
+    "image": "https://trisog-html.netlify.app/assets/images/featured-tours-section/tour-4.png",
+    "title": "Opera House & Harbor Tour",
+    "location": "Sydney, Australia",
+    "reviews": 832,
+    "rating": 4.5,
+    "price": 269
+  },
+  {
+    "id": "9",
+    "image": "https://trisog-html.netlify.app/assets/images/featured-tours-section/tour-4.png",
+    "title": "Luxury Experience in Dubai",
+    "location": "Dubai, UAE",
+    "reviews": 1475,
+    "rating": 4.8,
+    "price": 399
+  },
+  {
+    "id": "10",
+    "image": "https://wordpressboss.com/opb/vtravel-demo/assets/images/place/place1.jpg",
+    "title": "Nature Escape to Banff",
+    "location": "Banff, Canada",
+    "reviews": 612,
+    "rating": 4.9,
+    "price": 279
+  },
+  {
+    "id": "11",
+    "image": "https://wordpressboss.com/opb/vtravel-demo/assets/images/place/place3.jpg",
+    "title": "Classic London Landmarks",
+    "location": "London, UK",
+    "reviews": 1750,
+    "rating": 4.6,
+    "price": 309
+  }
+]

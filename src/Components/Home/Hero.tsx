@@ -1,5 +1,5 @@
 import Image from "next/image";
-import placeBanner from "@/assets/place.webp"
+import placeBanner from "@/assets/place.webp";
 import { kaushan } from "@/app/lib/font";
 export default function Hero() {
   return (
@@ -22,7 +22,9 @@ export default function Hero() {
           Find awesome car, plane and hotel in Bangladesh
         </p>
         <div>
-          <button className="px-6 py-3 rounded-full bg-[#fc5056] font-extrabold font-2xl text-white hover:border-2 hover:border-[#fc5056] hover:transition-all hover:duration-500 hover:bg-transparent">Book A Tour</button>
+          <button className="px-6 py-3 rounded-full bg-[#fc5056] border-[1px] font-extrabold font-2xl text-white hover:border-[#fc5056] hover:transition-all hover:duration-500 hover:bg-transparent">
+            Book A Tour
+          </button>
         </div>
       </div>
     </div>

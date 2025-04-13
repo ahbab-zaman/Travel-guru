@@ -26,7 +26,7 @@ export default function GuestSelector() {
         { label: "Children (3+ years)", key: "children" },
       ].map((item) => (
         <div key={item.key} className="flex items-center justify-between">
-          <span>{item.label}</span>
+          <span className="font-semibold">{item.label}</span>
           <div className="flex items-center gap-2">
             <button
               onClick={() => handleChange(item.key as GuestType, -1)}

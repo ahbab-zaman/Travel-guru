@@ -29,7 +29,7 @@ export default function PopularTour() {
       <Header title="Popular Tours" subtitle="Most Popular Tours" />
 
       <div className="grid grid-cols-4 gap-6 py-8 w-11/12 mx-auto">
-        {data.map((d) => (
+        {data.slice(0, 4).map((d) => (
           <TourCard d={d} key={d.id} />
         ))}
       </div>

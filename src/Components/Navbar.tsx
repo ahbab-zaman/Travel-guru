@@ -3,12 +3,12 @@
 import { useEffect, useState } from "react";
 import { AlignRight, X } from "lucide-react";
 import Link from "next/link";
-import Image from "next/image";
-import logo from "../../public/favicon.png";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const pathName = usePathname();
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
@@ -19,11 +19,14 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+  const isHome = pathName === "/";
 
   return (
     <nav
       className={`${
-        scrolled ? "bg-[#222] transition-all duration-500" : "bg-transparent"
+        scrolled
+          ? "bg-[#222] transition-all duration-500"
+          : `${isHome ? "bg-transparent" : "bg-[#222]"}`
       } w-full fixed top-0 z-50`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -43,7 +46,7 @@ const Navbar = () => {
               <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full" />
             </Link>
             <Link
-              href="/"
+              href="/about"
               className="relative font-semibold group text-white hover:text-white transition"
             >
               About

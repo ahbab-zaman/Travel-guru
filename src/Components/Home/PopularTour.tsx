@@ -3,6 +3,7 @@ import axios from "axios";
 import Header from "../utils/Header";
 import { useEffect, useState } from "react";
 import TourCard from "./TourCard";
+import Link from "next/link";
 
 export type TravelData = {
   id: string;
@@ -32,6 +33,14 @@ export default function PopularTour() {
         {data.slice(0, 4).map((d) => (
           <TourCard d={d} key={d.id} />
         ))}
+      </div>
+      <div className="flex justify-center items-center">
+        <Link href={"/allTour"}>
+          {" "}
+          <button className="px-6 py-3 rounded-md border-[1px] bg-[#fc5056] font-extrabold font-2xl text-white  hover:border-[#fc5056] hover:transition-all hover:duration-500 hover:bg-transparent hover:text-[#222]">
+            View More
+          </button>
+        </Link>
       </div>
     </div>
   );

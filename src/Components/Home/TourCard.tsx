@@ -9,7 +9,7 @@ export default function TourCard({ d }: Props) {
   return (
     <>
       <Link href={`/details/${d.id}`}>
-        <div className="rounded-2xl overflow-hidden shadow-lg bg-white">
+        <div className="rounded-2xl h-[382px] overflow-hidden shadow-lg bg-white">
           <div className="relative">
             <img
               src={d.image}
@@ -28,7 +28,7 @@ export default function TourCard({ d }: Props) {
                 {d.title}
               </h2>
             </div>
-            <div className="flex items-center gap-4 text-sm text-gray-500 mt-2">
+            <div className="flex justify-between items-center grow gap-4 text-sm text-gray-500 mt-2">
               <div className="flex items-center gap-1 text-red-500">
                 <span className="bg-red-100 text-red-600 px-2 py-0.5 rounded-full text-xs font-semibold">
                   ⭐ {d.rating}
@@ -37,7 +37,7 @@ export default function TourCard({ d }: Props) {
               <span>{d.reviews} reviews</span>
             </div>
 
-            <div className="mt-4 flex justify-between items-end">
+            <div className="mt-4 flex justify-between">
               <p className="text-sm text-gray-500">Starting From</p>
               <p className="text-xl font-semibold italic text-blue-900">
                 ${d.price}

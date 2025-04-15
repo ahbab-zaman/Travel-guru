@@ -26,7 +26,7 @@ export default async function DetailsPage({ params }: DetailsParams) {
 
   return (
     <>
-      <section className="w-11/12 mx-auto pt-32 gap-5 flex">
+      <section className="w-11/12 mx-auto pt-32 pb-16 gap-5 flex">
         <div className="lg:w-[70%] space-y-4">
           <figure className=" rounded-lg">
             <Image

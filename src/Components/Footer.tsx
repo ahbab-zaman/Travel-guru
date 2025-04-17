@@ -11,8 +11,8 @@ export default function Footer() {
   return (
     <>
       <section className="bg-[#222] text-white">
-        <footer className="w-11/12 mx-auto py-14 px-8 flex justify-between">
-          <div className="space-y-6 w-[30%] border-r pr-6 text-left">
+        <footer className="w-11/12 mx-auto py-14 px-8 flex justify-between lg:flex-row flex-col lg:gap-0 gap-8">
+          <div className="space-y-6 lg:w-[30%] w-11/12  lg:border-r border-r-0 lg:pr-6 pr-0 text-left">
             <h3 className="text-xl font-bold">TravelGuru</h3>
             <div>
               <p className={`${kaushan.className}`}>Need Any Help</p>
@@ -34,7 +34,8 @@ export default function Footer() {
               <FaLinkedinIn className="text-gray-300 text-xl" />
             </div>
           </div>
-          <div className="flex justify-between w-[40%] mx-[4rem]">
+
+          <div className="flex lg:flex-row flex-col justify-between lg:gap-0 gap-6 lg:w-[40%] w-11/12 lg:mx-[4rem] mx-auto">
             <div>
               <h4 className={`${kaushan.className} mb-2`}>Company</h4>
               <ul className="list-none space-y-2">
@@ -64,7 +65,7 @@ export default function Footer() {
             </div>
           </div>
 
-          <div className="w-[30%] border-l pl-6 space-y-4">
+          <div className="lg:w-[30%] w-11/12 lg:border-l border-l-0 lg:pl-6 pl-0 space-y-4">
             <h4 className={`${kaushan.className} mb-2`}>
               Sign Up to Newsletter
             </h4>
@@ -76,7 +77,7 @@ export default function Footer() {
                 <input
                   type="email"
                   placeholder="Enter email..."
-                  className="pl-10 pr-4 py-2 rounded-md focus:outline-none text-gray-700 placeholder-gray-400 bg-white w-80"
+                  className="pl-10 pr-4 py-2 rounded-md focus:outline-none text-gray-700 placeholder-gray-400 bg-white lg:w-80 w-52"
                 />
               </div>
               <button

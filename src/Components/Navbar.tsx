@@ -71,13 +71,12 @@ const Navbar = () => {
           {/* Right Side - Icons/Buttons */}
           <div className="lg:flex hidden gap-4 items-center justify-center">
             {/* Sign Up Button */}
-            <button className="relative px-4 py-2 font-semibold text-white transition-all duration-300 ease-in-out bg-gray-800 rounded-2xl shadow-lg group hover:scale-105 hover:text-rose-500">
-              <span className="absolute inset-0 w-full h-full transition duration-300 ease-in-out transform scale-0 bg-white rounded-2xl group-hover:scale-100 group-hover:opacity-10"></span>
+            <button className="px-4 py-2 rounded-2xl bg-[#fc5056] border-[1px] font-extrabold font-2xl text-white hover:border-[#fc5056] hover:transition-all hover:duration-500 hover:bg-transparent">
               Sign Up
             </button>
 
             {/* Sign In Button with Border Style */}
-            <button className="relative px-4 py-2 font-semibold text-gray-800 transition-all duration-300 ease-in-out bg-white rounded-2xl shadow-lg group hover:bg-gray-800 hover:text-white hover:scale-105">
+            <button className="px-4 py-2 font-semibold text-gray-800 hover:transition-all duration-300 ease-in-out bg-white border-[1px] rounded-2xl shadow-lg hover:bg-gray-800 hover:text-white hover:border-[#fff]">
               Sign In
             </button>
           </div>
@@ -93,7 +92,7 @@ const Navbar = () => {
 
       {/* Mobile Menu */}
       <div
-        className={`md:hidden fixed top-0 right-0 h-full w-64 bg-gray-800 text-white transform transition-transform duration-500 ease-in-out ${
+        className={`md:hidden fixed top-0 right-0 h-full w-64 bg-[#222] text-white transform transition-transform duration-500 ease-in-out ${
           isMobileMenuOpen ? "translate-x-0" : "translate-x-full"
         }`}
       >
@@ -141,13 +140,12 @@ const Navbar = () => {
           </Link>
           <div className="flex gap-4 items-center justify-center">
             {/* Sign Up Button */}
-            <button className="relative px-4 py-2 font-semibold text-white transition-all duration-300 ease-in-out bg-gray-800 rounded-2xl shadow-lg group hover:scale-105 hover:text-rose-500">
-              <span className="absolute inset-0 w-full h-full transition duration-300 ease-in-out transform scale-0 bg-white rounded-2xl group-hover:scale-100 group-hover:opacity-10"></span>
+            <button className="px-4 py-2 rounded-2xl bg-[#fc5056] border-[1px] font-extrabold font-2xl text-white hover:border-[#fc5056] hover:transition-all hover:duration-500 hover:bg-transparent">
               Sign Up
             </button>
 
             {/* Sign In Button with Border Style */}
-            <button className="relative px-4 py-2 font-semibold text-gray-800 transition-all duration-300 ease-in-out bg-white rounded-2xl shadow-lg group hover:bg-gray-800 hover:text-white hover:scale-105">
+            <button className="px-4 py-2 font-semibold text-gray-800 hover:transition-all duration-300 ease-in-out bg-white border-[1px] rounded-2xl shadow-lg hover:bg-gray-800 hover:text-white hover:border-[#fff]">
               Sign In
             </button>
           </div>

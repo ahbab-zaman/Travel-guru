@@ -1,6 +1,7 @@
 import { Heart } from "lucide-react";
 import { TravelData } from "./PopularTour";
 import Link from "next/link";
+import Image from "next/image";
 
 type Props = {
   d: TravelData;
@@ -11,9 +12,11 @@ export default function TourCard({ d }: Props) {
       <Link href={`/details/${d.id}`}>
         <div className="rounded-2xl h-[382px] overflow-hidden shadow-lg bg-white">
           <div className="relative">
-            <img
+            <Image
               src={d.image}
               alt={d.title}
+              width={100}
+              height={100}
               className="w-full h-52 object-cover hover:scale-110 transition-all duration-500"
             />
             <button className="absolute top-2 right-2 bg-white p-2 rounded-full shadow-md">

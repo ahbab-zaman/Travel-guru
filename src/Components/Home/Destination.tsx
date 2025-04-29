@@ -1,9 +1,10 @@
 "use client";
 type Destination = {
   name: string;
-  image: string | StaticImageData;
+  image: string;
 };
-import Image from "next/image";
+type ImageType = StaticImageData | null;
+import Image, { StaticImageData } from "next/image";
 import Header from "../utils/Header";
 import destination1 from "../../../public/d-1.webp";
 import destination2 from "../../../public/d-2.webp";
@@ -12,7 +13,6 @@ import destination4 from "../../../public/d-4.webp";
 import destination5 from "../../../public/d-5.webp";
 import destination6 from "../../../public/d-4.webp";
 import { useState } from "react";
-import type { StaticImageData } from "next/image";
 import { AnimatePresence, motion } from "framer-motion";
 export default function Destination() {
   const images = [
@@ -23,7 +23,7 @@ export default function Destination() {
     { name: "Thailand", image: destination5 },
     { name: "Australia", image: destination6 },
   ];
-  const [selectedImage, setSelectedImage] = useState(null);
+  const [selectedImage, setSelectedImage] = useState<ImageType>(null);
 
   return (
     <div>

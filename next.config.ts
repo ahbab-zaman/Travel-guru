@@ -7,6 +7,10 @@ const nextConfig: NextConfig = {
         protocol: "https",
         hostname: "wordpressboss.com",
       },
+      {
+        protocol: "https",
+        hostname: "trisog-html.netlify.app",
+      },
     ],
   },
 };

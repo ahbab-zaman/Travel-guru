@@ -22,7 +22,7 @@ interface TravelItem {
 export default async function DetailsPage({ params }: DetailsParams) {
   const res = await fetch(`http://localhost:3000/travel.json`);
   const data: TravelItem[] = await res.json();
-  const detail = data.find((item) => item.id === params.id);
+  const detail = await data.find((item) => item.id === params.id);
 
   return (
     <>

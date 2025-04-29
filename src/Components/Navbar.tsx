@@ -4,6 +4,7 @@ import { useEffect, useState } from "react";
 import { AlignRight, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
+import { kaushan } from "@/app/lib/font";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -32,8 +33,10 @@ const Navbar = () => {
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <div className="flex justify-between items-center h-16">
           {/* Logo */}
-          <div className="flex-shrink-0 text-xl font-bold text-white">
-            <Link href={"/"}>TravelGuru</Link>
+          <div className={`flex-shrink-0 text-xl font-bold text-white `}>
+            <Link href={"/"}>
+              Travel<span className={`${kaushan.className} text-2xl font-extrabold text-orange-400`}>Guru</span>
+            </Link>
           </div>
 
           {/* Middle Links */}

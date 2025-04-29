@@ -1,4 +1,3 @@
-import { kaushan } from "@/app/lib/font";
 import React from "react";
 import placeBanner from "@/assets/bookingBanner.png";
 import Image from "next/image";

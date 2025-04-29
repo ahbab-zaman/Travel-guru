@@ -1,6 +1,6 @@
 import type { Metadata } from "next";
 import "./globals.css";
-import { Great_Vibes, Inter, Kaushan_Script } from "next/font/google";
+import { Inter } from "next/font/google";
 import Navbar from "@/Components/Navbar";
 import Footer from "@/Components/Footer";
 
@@ -10,7 +10,6 @@ export const metadata: Metadata = {
   icons: "./favicon.png",
 };
 const inter = Inter({ subsets: ["latin"] });
-
 
 export default function RootLayout({
   children,

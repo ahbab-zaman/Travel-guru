@@ -5,7 +5,7 @@ import { FaEnvelope, FaMapMarkerAlt, FaPhoneAlt } from "react-icons/fa";
 export default function Contact() {
   return (
     <div>
-      <section className="py-16 px-4">
+      <section id="contact" className="py-16 px-4">
         <div className="max-w-6xl mx-auto">
           {/* Contact Info */}
           <div className="grid grid-cols-1 md:grid-cols-3 gap-8 text-center mb-12">

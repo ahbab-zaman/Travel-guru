@@ -3,6 +3,7 @@ import Contact from "@/Components/Home/Contact";
 import Destination from "@/Components/Home/Destination";
 import Hero from "@/Components/Home/Hero";
 import PopularTour from "@/Components/Home/PopularTour";
+import ScrollToTop from "@/Components/Home/ScrollButton";
 import TravelCounter from "@/Components/Home/TravelCounter";
 export default function App() {
   return (
@@ -13,6 +14,7 @@ export default function App() {
       <Destination />
       <Booking />
       <Contact />
+      <ScrollToTop />
     </div>
   );
 }

@@ -1,18 +1,8 @@
-import type { NextConfig } from "next";
-
-const nextConfig: NextConfig = {
+/** @type {import('next').NextConfig} */
+const nextConfig = {
   images: {
-    remotePatterns: [
-      {
-        protocol: "https",
-        hostname: "wordpressboss.com",
-      },
-      {
-        protocol: "https",
-        hostname: "trisog-html.netlify.app",
-      },
-    ],
+    domains: ["wordpressboss.com", "trisog-html.netlify.app"], // 👈 Add your image host here
   },
 };
 
-export default nextConfig;
+module.exports = nextConfig;

@@ -27,7 +27,7 @@ const Navbar = () => {
       className={`${
         scrolled
           ? "bg-[#222] transition-all duration-500"
-          : `${isHome ? "bg-transparent" : "bg-[#222]"}`
+          : `${isHome ? "bg-transparent fixed" : "bg-[#222]"}`
       } w-full fixed top-0 z-50`}
     >
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
@@ -35,7 +35,12 @@ const Navbar = () => {
           {/* Logo */}
           <div className={`flex-shrink-0 text-xl font-bold text-white `}>
             <Link href={"/"}>
-              Travel<span className={`${kaushan.className} text-2xl font-extrabold text-orange-400`}>Guru</span>
+              Travel
+              <span
+                className={`${kaushan.className} text-2xl font-extrabold text-orange-400`}
+              >
+                Guru
+              </span>
             </Link>
           </div>
 
@@ -63,7 +68,7 @@ const Navbar = () => {
               <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full" />
             </Link>
             <Link
-              href="/"
+              href="#contact"
               className="relative font-semibold group text-white hover:text-white transition"
             >
               Contact
@@ -75,11 +80,6 @@ const Navbar = () => {
           <div className="lg:flex hidden gap-4 items-center justify-center">
             {/* Sign Up Button */}
             <button className="px-4 py-2 rounded-2xl bg-[#fc5056] border-[1px] font-extrabold font-2xl text-white hover:border-[#fc5056] hover:transition-all hover:duration-500 hover:bg-transparent">
-              Sign Up
-            </button>
-
-            {/* Sign In Button with Border Style */}
-            <button className="px-4 py-2 font-semibold text-gray-800 hover:transition-all duration-300 ease-in-out bg-white border-[1px] rounded-2xl shadow-lg hover:bg-gray-800 hover:text-white hover:border-[#fff]">
               Sign In
             </button>
           </div>

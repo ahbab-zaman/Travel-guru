@@ -65,6 +65,8 @@ npm run dev
 
 -Next.js
 
+-Typescript
+
 -Tailwind CSS
 
 -Axios

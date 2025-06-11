@@ -72,3 +72,5 @@ npm run dev
 -Axios
 
 -Vercel
+
+-Next auth

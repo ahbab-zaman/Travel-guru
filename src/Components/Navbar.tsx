@@ -5,13 +5,15 @@ import { AlignRight, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { kaushan } from "@/app/lib/font";
-import { useSession, signIn, signOut } from "next-auth/react";
+import { useSession, signOut } from "next-auth/react";
 import { useRouter } from "next/navigation";
+import { motion, AnimatePresence } from "framer-motion"; // ✅ NEW
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const pathName = usePathname();
+  const [dropdownOpen, setDropdownOpen] = useState(false);
   useEffect(() => {
     const handleScroll = () => {
       const offset = window.scrollY;
@@ -22,6 +24,20 @@ const Navbar = () => {
       window.removeEventListener("scroll", handleScroll);
     };
   }, []);
+
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      const target = event.target as HTMLElement;
+      if (!target.closest(".relative")) {
+        setDropdownOpen(false);
+      }
+    };
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, []);
+
   const isHome = pathName === "/";
 
   const { data: session } = useSession();
@@ -93,12 +109,38 @@ const Navbar = () => {
                 </button>
               </>
             ) : (
-              <button
-                onClick={() => signOut({ callbackUrl: "/login" })}
-                className="px-4 py-2 rounded-2xl bg-[#fc5056] border-[1px] font-extrabold font-2xl text-white hover:border-[#fc5056] hover:transition-all hover:duration-500 hover:bg-transparent"
-              >
-                Logout
-              </button>
+              <div className="relative">
+                <img
+                  src={session?.user?.image ?? "/default-avatar.png"}
+                  alt="User Avatar"
+                  className="w-10 h-10 rounded-full cursor-pointer border-2 border-white"
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                />
+
+                <AnimatePresence>
+                  {dropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50"
+                    >
+                      <div className="py-2 text-sm text-gray-800 flex justify-center items-center">
+                        <button
+                          onClick={() => {
+                            setDropdownOpen(false);
+                            signOut({ callbackUrl: "/login" });
+                          }}
+                          className="px-4 py-2 rounded-2xl bg-[#fc5056] border-[1px] font-extrabold font-2xl text-white hover:border-[#fc5056] hover:text-[#fc5056] hover:transition-all hover:duration-500 hover:bg-transparent"
+                        >
+                          Logout
+                        </button>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             )}
           </div>
 
@@ -170,12 +212,38 @@ const Navbar = () => {
                 </button>
               </>
             ) : (
-              <button
-                onClick={() => signOut({ callbackUrl: "/login" })}
-                className="px-4 py-2 rounded-2xl bg-[#fc5056] border-[1px] font-extrabold font-2xl text-white hover:border-[#fc5056] hover:transition-all hover:duration-500 hover:bg-transparent"
-              >
-                Logout
-              </button>
+              <div className="relative">
+                <img
+                  src={session?.user?.image ?? "/default-avatar.png"}
+                  alt="User Avatar"
+                  className="w-10 h-10 rounded-full cursor-pointer border-2 border-white"
+                  onClick={() => setDropdownOpen(!dropdownOpen)}
+                />
+
+                <AnimatePresence>
+                  {dropdownOpen && (
+                    <motion.div
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      exit={{ opacity: 0, y: -10 }}
+                      transition={{ duration: 0.2 }}
+                      className="absolute right-0 mt-2 w-48 bg-white rounded-md shadow-lg z-50"
+                    >
+                      <div className="py-2 text-sm text-gray-800">
+                        <button
+                          onClick={() => {
+                            setDropdownOpen(false);
+                            signOut({ callbackUrl: "/login" });
+                          }}
+                          className="px-4 py-2 rounded-2xl bg-[#fc5056] border-[1px] font-extrabold font-2xl text-white hover:border-[#fc5056] hover:transition-all hover:duration-500 hover:bg-transparent"
+                        >
+                          Logout
+                        </button>
+                      </div>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
             )}
           </div>
         </div>

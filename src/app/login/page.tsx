@@ -1,10 +1,26 @@
 "use client";
 import { signIn } from "next-auth/react";
 import { FaGoogle } from "react-icons/fa";
+import Image from "next/image";
+import travelBg from "../../../public/travel-bg.jpg";
+
 const Login = () => {
   return (
-    <div className="flex justify-center items-center min-h-screen bg-white">
-      <div className="w-full max-w-md bg-white p-8 rounded-lg border border-gray-200 shadow">
+    <div className="relative min-h-screen flex items-center justify-center overflow-hidden">
+      {/* 🔽 Background Image with Blur and Blend */}
+      <Image
+        src={travelBg}
+        alt="Travel Background"
+        fill
+        className="object-cover brightness-50 mix-blend-overlay z-0"
+        priority
+      />
+
+      {/* 🔽 Overlay to improve text readability */}
+      <div className="absolute inset-0 bg-black/40 z-0" />
+
+      {/* 🔽 Content Card */}
+      <div className="z-10 w-full max-w-md bg-white/90 p-8 rounded-lg border border-gray-200 shadow-xl backdrop-blur-md">
         <form className="space-y-4">
           <div>
             <label className="block text-sm font-semibold mb-1">
@@ -52,7 +68,7 @@ const Login = () => {
         <div className="flex justify-center gap-4 mt-4">
           <button
             onClick={() => signIn("google", { callbackUrl: "/" })}
-            className="flex items-center gap-2 bg-red-500 text-white px-4 py-2 rounded cursor-pointer"
+            className="flex items-center gap-2 bg-red-500 text-white px-4 py-2 rounded cursor-pointer hover:bg-red-600 transition"
           >
             <span className="text-lg">
               <FaGoogle />

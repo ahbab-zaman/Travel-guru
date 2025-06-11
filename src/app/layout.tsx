@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import "./globals.css";
 import { Inter } from "next/font/google";
 import LayoutWrapper from "@/Components/LayoutWrapper";
+import NextProviders from "./provider/NextProviders";
 
 export const metadata: Metadata = {
   title: "TravelGuru",
@@ -19,7 +20,9 @@ export default function RootLayout({
     <html lang="en">
       <body className={inter.className}>
         <div className="min-h-screen">
-          <LayoutWrapper>{children}</LayoutWrapper>
+          <NextProviders>
+            <LayoutWrapper>{children}</LayoutWrapper>
+          </NextProviders>
         </div>
       </body>
     </html>

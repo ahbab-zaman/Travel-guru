@@ -5,6 +5,8 @@ import { AlignRight, X } from "lucide-react";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { kaushan } from "@/app/lib/font";
+import { useSession, signIn, signOut } from "next-auth/react";
+import { useRouter } from "next/navigation";
 
 const Navbar = () => {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
@@ -21,6 +23,9 @@ const Navbar = () => {
     };
   }, []);
   const isHome = pathName === "/";
+
+  const { data: session } = useSession();
+  const router = useRouter();
 
   return (
     <nav
@@ -78,10 +83,23 @@ const Navbar = () => {
 
           {/* Right Side - Icons/Buttons */}
           <div className="lg:flex hidden gap-4 items-center justify-center">
-            {/* Sign Up Button */}
-            <button className="px-4 py-2 rounded-2xl bg-[#fc5056] border-[1px] font-extrabold font-2xl text-white hover:border-[#fc5056] hover:transition-all hover:duration-500 hover:bg-transparent">
-              Sign In
-            </button>
+            {!session ? (
+              <>
+                <button
+                  onClick={() => router.push("/login")}
+                  className="px-4 py-2 rounded-2xl bg-[#fc5056] border-[1px] font-extrabold font-2xl text-white hover:border-[#fc5056] hover:transition-all hover:duration-500 hover:bg-transparent"
+                >
+                  Sign In
+                </button>
+              </>
+            ) : (
+              <button
+                onClick={() => signOut({ callbackUrl: "/login" })}
+                className="px-4 py-2 rounded-2xl bg-[#fc5056] border-[1px] font-extrabold font-2xl text-white hover:border-[#fc5056] hover:transition-all hover:duration-500 hover:bg-transparent"
+              >
+                Logout
+              </button>
+            )}
           </div>
 
           {/* Mobile Menu Button */}
@@ -142,15 +160,23 @@ const Navbar = () => {
             <span className="absolute left-0 -bottom-1 h-[2px] w-0 bg-white transition-all duration-300 group-hover:w-full" />
           </Link>
           <div className="flex gap-4 items-center justify-center">
-            {/* Sign Up Button */}
-            <button className="px-4 py-2 rounded-2xl bg-[#fc5056] border-[1px] font-extrabold font-2xl text-white hover:border-[#fc5056] hover:transition-all hover:duration-500 hover:bg-transparent">
-              Sign Up
-            </button>
-
-            {/* Sign In Button with Border Style */}
-            <button className="px-4 py-2 font-semibold text-gray-800 hover:transition-all duration-300 ease-in-out bg-white border-[1px] rounded-2xl shadow-lg hover:bg-gray-800 hover:text-white hover:border-[#fff]">
-              Sign In
-            </button>
+            {!session ? (
+              <>
+                <button
+                  onClick={() => router.push("/login")}
+                  className="px-4 py-2 rounded-2xl bg-[#fc5056] border-[1px] font-extrabold font-2xl text-white hover:border-[#fc5056] hover:transition-all hover:duration-500 hover:bg-transparent"
+                >
+                  Sign In
+                </button>
+              </>
+            ) : (
+              <button
+                onClick={() => signOut({ callbackUrl: "/login" })}
+                className="px-4 py-2 rounded-2xl bg-[#fc5056] border-[1px] font-extrabold font-2xl text-white hover:border-[#fc5056] hover:transition-all hover:duration-500 hover:bg-transparent"
+              >
+                Logout
+              </button>
+            )}
           </div>
         </div>
       </div>

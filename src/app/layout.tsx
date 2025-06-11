@@ -1,8 +1,7 @@
 import type { Metadata } from "next";
 import "./globals.css";
 import { Inter } from "next/font/google";
-import Navbar from "@/Components/Navbar";
-import Footer from "@/Components/Footer";
+import LayoutWrapper from "@/Components/LayoutWrapper";
 
 export const metadata: Metadata = {
   title: "TravelGuru",
@@ -19,9 +18,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={inter.className}>
-        <Navbar />
-        <div className="min-h-screen">{children}</div>
-        <Footer />
+        <div className="min-h-screen">
+          <LayoutWrapper>{children}</LayoutWrapper>
+        </div>
       </body>
     </html>
   );

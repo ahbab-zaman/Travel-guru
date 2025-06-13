@@ -24,12 +24,9 @@ export default async function DetailsPage({
 }) {
   const { id } = await params;
 
-  const res = await fetch(
-    "http://localhost:3000/travel.json",
-    {
-      cache: "no-store",
-    }
-  );
+  const res = await fetch(`${process.env.NEXT_PUBLIC_BASE_URL}/travel.json`, {
+    cache: "no-store",
+  });
   const data: TravelItem[] = await res.json();
   const detail = data.find((item) => item.id === id);
 
